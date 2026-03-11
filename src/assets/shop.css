@@ -1,0 +1,46 @@
+/* CSS for the shop page */
+
+.ProductPageHeading {
+  text-align: center;
+}
+
+.Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.Products {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  white-space: wrap;
+  width: 150px;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ProductDetails {
+  margin-top: auto;
+}
+
+.ProductImages {
+  height: 150px;
+  width: auto;
+}
+
+.AddtoCart {
+  text-align: right;
+}
+
+.AddButton {
+  background-color: lightskyblue;
+}
+
+.Price {
+  text-align: right;
+}

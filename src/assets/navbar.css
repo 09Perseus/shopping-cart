@@ -1,0 +1,32 @@
+/* CSS for the navbar component */
+
+.Navbar {
+  display: grid;
+  place-items: center;
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  padding: 0px;
+  margin: 30px;
+}
+
+li a {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: grey;
+}
+
+a.active {
+  background-color: black;
+  color: white;
+}
