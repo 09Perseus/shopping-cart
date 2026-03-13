@@ -1,13 +1,30 @@
 import { useState, useEffect } from "react";
+import { UseCart } from "../cartcontext";
 import "../assets/shop.css";
-import { Link } from "react-router-dom";
 
 export default function Shop() {
   //Defining useState variable to store array of products
   const [products, setProducts] = useState([]);
 
   //Defining useState variable to store the quantity of items that must be added to cart
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState({});
+
+  //Defining functions to get the quantity to display in the input tag and update when the value is changed
+  const getQuantity = (id) => quantity[id] ?? 1;
+  const updateQuantity = (id, value) =>
+    setQuantity({ ...quantity, [id]: value });
+
+  //Defining the AddToCart function
+  const { cart, setCart } = UseCart();
+  function AddToCart(id) {
+    if (id in cart) {
+      setCart({ ...cart, [id]: cart[id] + getQuantity(id) });
+    } else {
+      setCart({ ...cart, [id]: getQuantity(id) });
+    }
+
+    return null;
+  }
 
   //Fetching product details and storing it in the products useState variable
   useEffect(() => {
@@ -19,7 +36,7 @@ export default function Shop() {
   return (
     <>
       {/* Title */}
-      <div className="ProductPageHeading">
+      <div className="PageHeading">
         <h1>Products</h1>
       </div>
 
@@ -33,10 +50,20 @@ export default function Shop() {
                 type="number"
                 min="0"
                 style={{ width: "25px" }}
-                value={quantity}
-                onChange={(e) => setQuantity(parseInt(e.target.value))}
+                value={getQuantity(product.id)}
+                onChange={(e) =>
+                  updateQuantity(product.id, parseInt(e.target.value))
+                }
+                onBlur={(e) =>
+                  updateQuantity(product.id, parseInt(e.target.value) || 1)
+                }
               />
-              <button className="AddButton">Add to Cart</button>
+              <button
+                className="AddButton"
+                onClick={() => AddToCart(product.id)}
+              >
+                Add to Cart
+              </button>
             </div>
             {/* Product Image */}
             <img src={product.image} className="ProductImages" /> <br />

@@ -1,13 +1,13 @@
 /* CSS for the shop page */
 
-.ProductPageHeading {
+.PageHeading {
   text-align: center;
 }
 
 .Gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .Products {
@@ -15,7 +15,7 @@
   border-color: black;
   border-style: solid;
   white-space: wrap;
-  width: 150px;
+  width: 160px;
   padding: 5px;
   margin: 2px;
   border-radius: 5px;
@@ -41,6 +41,26 @@
   background-color: lightskyblue;
 }
 
+.AddButton:hover {
+  background-color: rgb(79, 79, 198);
+}
+
 .Price {
   text-align: right;
+}
+
+.ShowQuantity {
+  border-top: solid 1px black;
+  text-align: right;
+}
+
+.RemoveButton {
+  background-color: red;
+  color: white;
+  border: solid 1px red;
+  border-radius: 5px;
+}
+
+.RemoveButton:hover {
+  background-color: maroon;
 }

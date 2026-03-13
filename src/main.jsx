@@ -5,6 +5,7 @@ import Home from "./pages/home.jsx";
 import Shop from "./pages/shop.jsx";
 import Cart from "./pages/cart.jsx";
 import Navbar from "./components/navbar.jsx";
+import { CartProvider } from "./cartcontext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +39,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <>
-    <StrictMode>
-      <RouterProvider router={router} />
-    </StrictMode>
+    <CartProvider>
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>
+    </CartProvider>
   </>,
 );

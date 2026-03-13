@@ -1,20 +1,22 @@
 import { useState } from "react";
 import "../assets/home.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  return (
-    <div>
-      <h1>Welcome to the Online Shopping Center!</h1>
+  let navigate = useNavigate();
 
-      <p>
-        Your one-stop website for all your needs
-        <br />
-        <Link to="/shop">
-          <button>Go Shopping!</button>
-        </Link>
-      </p>
-    </div>
+  return (
+    <>
+      <div>
+        <h1>Welcome to the Online Shopping Center!</h1>
+      </div>
+      <div className="HomeText">Your one-stop website for all your needs</div>
+      <div className="ShopButtonDiv">
+        <button className="ShopButton" onClick={() => navigate("/shop")}>
+          Go Shopping!
+        </button>
+      </div>
+    </>
   );
 }
 

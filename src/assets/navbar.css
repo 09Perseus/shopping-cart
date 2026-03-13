@@ -11,6 +11,7 @@ ul {
   display: flex;
   padding: 0px;
   margin: 30px;
+  gap: 1px;
 }
 
 li a {
@@ -27,6 +28,13 @@ a:hover {
 }
 
 a.active {
-  background-color: black;
+  background-color: rgb(34, 33, 33);
   color: white;
+}
+
+.CartNumber {
+  color: white;
+  background-color: red;
+  border: solid 3px red;
+  border-radius: 20%;
 }
