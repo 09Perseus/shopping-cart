@@ -1,5 +1,5 @@
 //This file will contain the code for the navbar component that will be displayed on home, shop and cart pages
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../assets/navbar.css";
 import { UseCart } from "../cartcontext";
 
@@ -19,15 +19,15 @@ export default function Navbar() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <button onClick={() => Navigate("/")}>Home</button>
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <button onClick={() => Navigate("/")}>Shop</button>
           </li>
           <li>
-            <NavLink to="/cart">
+            <button onClick={() => Navigate("/")}>
               Cart <span className="CartNumber"> {cnum}</span>
-            </NavLink>
+            </button>
           </li>
         </ul>
       </nav>
