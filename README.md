@@ -2,7 +2,7 @@
 
 This is a basic e-commerce website implemented using the React framework and Vite build.
 
-##Project File Structure
+## Project File Structure
 
 src/components - Contains all components used in the project
 src/pages - Contains the pages used in the project
